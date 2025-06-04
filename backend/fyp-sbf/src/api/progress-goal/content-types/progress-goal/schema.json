@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "progress_goals",
+  "info": {
+    "singularName": "progress-goal",
+    "pluralName": "progress-goals",
+    "displayName": "Progress Goal",
+    "description": "Tracks a user's goals or milestones with status, priority, and metadata"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "goalStatus": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "in-progress",
+        "done"
+      ],
+      "default": "pending"
+    },
+    "deadline": {
+      "type": "date"
+    },
+    "priority": {
+      "type": "enumeration",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "medium"
+    },
+    "category": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "progress_goals"
+    }
+  }
+}

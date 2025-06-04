@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "match_buddies",
+  "info": {
+    "singularName": "match-buddy",
+    "pluralName": "match-buddies",
+    "displayName": "Match Buddy"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "match_buddy"
+    },
+    "matchedUsers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "match_buddies"
+    },
+    "matchScore": {
+      "type": "decimal"
+    }
+  }
+}

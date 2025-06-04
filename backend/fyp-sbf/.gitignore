@@ -1,0 +1,30 @@
+# Node.js
+node_modules/
+build/
+dist/
+.cache/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.env
+*.env
+venv/
+.env.local
+.env.development
+.env.test
+.env.production
+
+# database & logs
+*.log
+*.sqlite3
+*.db
+
+# OS & IDE files
+.DS_Store
+.vscode/
+.idea/
+*.swp
